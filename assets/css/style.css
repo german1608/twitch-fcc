@@ -1,5 +1,6 @@
 html, body {
   font-family: 'Roboto', sans-serif;
+  overflow:hidden; height:100%;
 }
 
 body {
@@ -16,9 +17,16 @@ body {
   color: white;
 }
 
-.tabs .tab a.active {
-  
+.tabs-content.carousel { 
+  height: 50vh !important; 
+  overflow-x:hidden; 
+  overflow-y: scroll; 
 }
+
+.tabs-content.carousel .carousel-item { 
+  width: 100%; 
+  height: 100%; 
+} 
 
 #main {
   margin-bottom: 0;
@@ -28,9 +36,13 @@ body {
   width: 100%;
   height: 50vh;
   overflow-y: scroll;
-  padding-right: 17px;
+  padding: 0;
 }
 
+#all-panel ul, #offline-panel ul, #online-panel  ul {
+  margin: 0;
+  height: inherit;
+}
 
 #all-panel ul li:nth-child(even), #offline-panel ul li:nth-child(even) {
   background-color: #c5cae9;
@@ -39,5 +51,17 @@ body {
 #all-panel li, #offline-panel li, #online-panel li {
   display:flex;
   margin: 0;
-  height: 5rem;
+  height: 6rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.user {
+  margin: 0;
+  /*padding: .5rem;*/
+}
+
+.user p, .user h5 {
+  margin: 0;
+  /*padding-left: 1rem;*/
 }
