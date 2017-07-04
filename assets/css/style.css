@@ -2,10 +2,39 @@ html, body {
   font-family: 'Roboto', sans-serif;
 }
 
-.indigo {
-  background-color: #3f51b5 !important;
+body {
+  height: 100vh;
+  justify-content: center;
 }
 
-.white-text {
-  color: white !important;
+.app {
+  width: 90%;
+}
+
+.tabs .tab a, .tabs .tab a.active{
+  color: white;
+}
+
+.tabs .tab a.active {
+  
+}
+
+#main {
+  margin-bottom: 0;
+}
+
+#all-panel, #offline-panel, #online-panel {
+  height: 50vh;
+  overflow: scroll;
+}
+
+
+#all-panel ul li:nth-child(even), #offline-panel ul li:nth-child(even) {
+  background-color: #c5cae9;
+}
+
+#all-panel li, #offline-panel li, #online-panel li {
+  display:flex;
+  margin: 0;
+  height: 5rem;
 }
