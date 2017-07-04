@@ -15,7 +15,7 @@ $(document).ready(function () {
       dataType: 'jsonp'
     })
     .done(function(json) {
-      let channel, game, icon;
+      let channelLink, game = "", icon = "assets/images/unknown.png";
       let content = `
       li>
         <div class="user row valign-wrapper">
@@ -23,7 +23,7 @@ $(document).ready(function () {
             <img src="assets/images/profile.jpg" alt="profile.jpg" class="responsive-img circle"  />
           </div>
           <div class="col s6 left-align">
-            <h5><a href="${channel}">${user}</a></h5>
+            <h5><a href="${channelLink}">${user}</a></h5>
             <p>${game}</p>
           </div>
           <div class="col s2">
