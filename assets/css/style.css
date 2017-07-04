@@ -9,6 +9,7 @@ body {
 
 .app {
   width: 90%;
+  overflow: hidden;
 }
 
 .tabs .tab a, .tabs .tab a.active{
@@ -24,8 +25,10 @@ body {
 }
 
 #all-panel, #offline-panel, #online-panel {
+  width: 100%;
   height: 50vh;
-  overflow: scroll;
+  overflow-y: scroll;
+  padding-right: 17px;
 }
 
 
