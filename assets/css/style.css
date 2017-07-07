@@ -1,6 +1,7 @@
 html, body {
   font-family: 'Roboto', sans-serif;
-  overflow:hidden; height:100%;
+  overflow:hidden; 
+  height:100%;
 }
 
 body {
@@ -8,9 +9,17 @@ body {
   justify-content: center;
 }
 
-.app {
+#app {
+  transition: opacity 1s ease, transform 1.2s cubic-bezier(0, 0, 0.58, 1.74);
   width: 90%;
   overflow: hidden;
+  opacity: 0;
+  transform: scale(0, 0);
+}
+
+#app.active {
+  opacity: 1;
+  transform: scale(1, 1);
 }
 
 .tabs .tab a, .tabs .tab a.active{
@@ -19,8 +28,6 @@ body {
 
 .tabs-content.carousel { 
   height: 50vh !important; 
-  overflow-x:hidden; 
-  overflow-y: scroll; 
 }
 
 .tabs-content.carousel .carousel-item { 
@@ -35,16 +42,17 @@ body {
 #all-panel, #offline-panel, #online-panel {
   width: 100%;
   height: 50vh;
-  overflow-y: scroll;
+  overflow-y: auto;
   padding: 0;
 }
 
 #all-panel ul, #offline-panel ul, #online-panel  ul {
   margin: 0;
   height: inherit;
+  transition: opacity 1s ease;
 }
 
-#all-panel ul li:nth-child(even), #offline-panel ul li:nth-child(even) {
+#all-panel ul li:nth-child(even), #offline-panel ul li:nth-child(even), #online-panel ul li:nth-child(even) {
   background-color: #c5cae9;
 }
 
@@ -53,7 +61,7 @@ body {
   margin: 0;
   height: 6rem;
   align-items: center;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .user {
@@ -64,4 +72,43 @@ body {
 .user p, .user h5 {
   margin: 0;
   /*padding-left: 1rem;*/
+}
+
+.user.row {
+  width: 100%;
+  overflow: hidden;
+}
+
+.user.row span a{
+  color: black;
+}
+
+.user.row span {
+  font-size: 1.2rem;
+}
+
+@media only screen and (min-width: 601px) {
+  #app {
+    max-width: 60%;
+  }
+
+  .user.row img.profile {
+    max-width: 80%;
+  }
+
+  .user.row img.status {
+    max-widtH: 50%;
+  }
+}
+@media only screen and (min-width: 993px) {
+  #app {
+    max-width: 50%;
+  }
+  .user.row img.profile {
+    max-width: 65%;
+  }
+
+  .user.row img.status {
+    max-widtH: 40%;
+  }
 }
